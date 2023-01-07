@@ -20,7 +20,7 @@
   },
   "keywords": [],
   "author": "Aman Singh",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
