@@ -30,7 +30,7 @@ export default [
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
-      postcss({ extract: true, plugins: [autoprefixer(), tailwindcss()] }),
+      postcss({ plugins: [autoprefixer(), tailwindcss()] }),
       terser(),
     ],
     external: ["react-dom"],

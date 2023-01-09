@@ -13,7 +13,7 @@
     "test": "jest",
     "storybook": "concurrently \"npm:watch:*\"",
     "build-storybook": "concurrently \"npm:build:*\"",
-    "build:css": "pnpm dlx tailwindcss -i ./src/index.css -o ./public/tailwind.css",
+    "build:css": "pnpm dlx tailwindcss -i ./src/index.css -o ./public/tailwind.css --minify",
     "build:storybook": "storybook build",
     "watch:css": "pnpm dlx tailwindcss -i ./src/index.css -o ./public/tailwind.css --watch",
     "watch:storybook": "storybook dev -p 6006"
@@ -66,6 +66,9 @@
     "registry": "https://npm.pkg.github.com/amanksdotcom"
   },
   "dependencies": {
-    "classnames": "^2.3.2"
+    "@formkit/auto-animate": "1.0.0-beta.5",
+    "classnames": "^2.3.2",
+    "react-children-utilities": "^2.8.0",
+    "react-icons": "^4.7.1"
   }
 }
