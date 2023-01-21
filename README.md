@@ -3,10 +3,10 @@ A tiny react component library for your personal project.
 
 #### Available components:
 - Button
+- Accordion
 
 #### Todo / WIP 🚧:
 - Dropdown
-- Accordion
 - Container (a div container with tailwind container class and horizontally centered)
 - Switch 
 - Modal (maybe built on top of React Modal library)
