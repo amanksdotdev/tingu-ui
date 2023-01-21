@@ -3,16 +3,17 @@ import React, { useContext } from "react";
 import { CgChevronDown, CgChevronUp } from "react-icons/cg";
 import { AccordionContext } from "./AccordionContext";
 import { AccordionItemContext } from "./AccordionItem";
-import { IAccordionItem } from "./types";
 
 interface AccordionButtonProps {
   children?: React.ReactNode;
+  className?: string;
 }
 
 export const AccordionButton: React.FC<AccordionButtonProps> = ({
   children,
+  className,
 }) => {
-  const { totalItems, setActiveIndexes, allowMultiple } =
+  const { totalItems, setActiveIndexes, allowMultiple, hideFocusRings } =
     useContext(AccordionContext);
   const { isOpen, index } = useContext(AccordionItemContext);
 
@@ -20,14 +21,18 @@ export const AccordionButton: React.FC<AccordionButtonProps> = ({
   const lastItem = index === totalItems - 1;
 
   const finalClassNames = classNames(
-    "flex items-center justify-between font-medium text-gray-500 p-5 w-full focus:ring-4 border border-b-0",
+    "flex items-center justify-between font-medium p-5 text-gray-500 w-full border border-b-0",
     {
       "rounded-t-xl": firstItem,
+      "border-b": lastItem,
       "rounded-b-xl": lastItem && !isOpen,
       "bg-gray-200": isOpen,
-      "focus:ring-gray-300": isOpen,
-      "focus:ring-gray-200": !isOpen,
-    }
+      "bg-white": !isOpen,
+      "focus:ring-4": !hideFocusRings,
+      "focus:ring-gray-300": isOpen && !hideFocusRings,
+      "focus:ring-gray-200": !isOpen && !hideFocusRings,
+    },
+    className
   );
 
   const handleClick = (index: number) => {
@@ -45,7 +50,7 @@ export const AccordionButton: React.FC<AccordionButtonProps> = ({
 
   return (
     <button className={finalClassNames} onClick={() => handleClick(index)}>
-      <span>{children}</span>
+      <span className={className}>{children}</span>
       {isOpen ? <CgChevronUp size={20} /> : <CgChevronDown size={20} />}
     </button>
   );

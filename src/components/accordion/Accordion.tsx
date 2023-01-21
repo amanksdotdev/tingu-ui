@@ -8,11 +8,20 @@ const Accordion: React.FC<PropsWithChildren<AccordionProps>> = ({
   items,
   children,
   allowMultiple = false,
+  animate = false,
+  hideFocusRings = false,
+  expanded = false,
 }) => {
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
   const [totalItems, setTotalItems] = useState(() =>
     items ? items.length : -1
   );
+
+  useEffect(() => {
+    if (expanded) {
+      setActiveIndexes([0]);
+    }
+  }, [expanded]);
 
   const getChildrenWithProps = () => {
     let actualIndex = 0;
@@ -47,9 +56,16 @@ const Accordion: React.FC<PropsWithChildren<AccordionProps>> = ({
 
   return (
     <AccordionContext.Provider
-      value={{ activeIndexes, setActiveIndexes, totalItems, allowMultiple }}
+      value={{
+        activeIndexes,
+        setActiveIndexes,
+        totalItems,
+        allowMultiple,
+        animate,
+        hideFocusRings,
+      }}
     >
-      <div className="border rounded-xl">{renderItems}</div>
+      <div className="rounded-xl">{renderItems}</div>
     </AccordionContext.Provider>
   );
 };

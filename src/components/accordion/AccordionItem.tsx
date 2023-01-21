@@ -21,11 +21,14 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
   children,
 }) => {
   const parent = useRef(null);
-  const { activeIndexes } = useContext(AccordionContext);
+  const { activeIndexes, animate } = useContext(AccordionContext);
   const isOpen = activeIndexes.includes(index);
 
   useEffect(() => {
-    parent.current && autoAnimate(parent.current);
+    if (!animate || !parent.current) {
+      return;
+    }
+    autoAnimate(parent.current);
   }, [parent]);
 
   const childrenJsx = item ? (

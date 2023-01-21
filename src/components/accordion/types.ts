@@ -34,4 +34,16 @@ export interface AccordionProps {
    *  allow multiple accordion to open at a time
    */
   allowMultiple?: boolean;
+  /**
+   * animate the closing and opening of accordion
+   */
+  animate?: boolean;
+  /**
+   * to hide the outline rings on accordion item in focus
+   */
+  hideFocusRings?: boolean;
+  /**
+   * opens the first accordion content by default
+   */
+  expanded?: boolean;
 }
