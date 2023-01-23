@@ -13,7 +13,7 @@ export const AccordionButton: React.FC<AccordionButtonProps> = ({
   children,
   className,
 }) => {
-  const { totalItems, setActiveIndexes, allowMultiple, hideFocusRings } =
+  const { totalItems, setActiveIndexes, allowMultiple, focusRings } =
     useContext(AccordionContext);
   const { isOpen, index } = useContext(AccordionItemContext);
 
@@ -28,9 +28,9 @@ export const AccordionButton: React.FC<AccordionButtonProps> = ({
       "rounded-b-xl": lastItem && !isOpen,
       "bg-gray-200": isOpen,
       "bg-white": !isOpen,
-      "focus:ring-4": !hideFocusRings,
-      "focus:ring-gray-300": isOpen && !hideFocusRings,
-      "focus:ring-gray-200": !isOpen && !hideFocusRings,
+      "focus:ring-4": focusRings,
+      "focus:ring-gray-300": isOpen && focusRings,
+      "focus:ring-gray-200": !isOpen && focusRings,
     },
     className
   );

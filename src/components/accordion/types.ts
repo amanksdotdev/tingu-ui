@@ -39,11 +39,15 @@ export interface AccordionProps {
    */
   animate?: boolean;
   /**
-   * to hide the outline rings on accordion item in focus
+   * to show the outline rings on accordion item in focus
    */
-  hideFocusRings?: boolean;
+  focusRings?: boolean;
   /**
    * opens the first accordion content by default
    */
   expanded?: boolean;
+  /**
+   * css classes
+   */
+  className?: string;
 }
