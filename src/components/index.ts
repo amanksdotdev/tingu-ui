@@ -5,3 +5,4 @@ export {
   AccordionButton,
   AccordionContent,
 } from "./accordion";
+export { default as Container } from "./container";

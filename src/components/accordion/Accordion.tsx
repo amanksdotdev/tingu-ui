@@ -3,14 +3,16 @@ import { AccordionContext } from "./AccordionContext";
 import { AccordionItem } from "./AccordionItem";
 import { AccordionItemProps, AccordionProps } from "./types";
 import ChildrenUtilities from "react-children-utilities";
+import classNames from "classnames";
 
 const Accordion: React.FC<PropsWithChildren<AccordionProps>> = ({
   items,
   children,
   allowMultiple = false,
   animate = false,
-  hideFocusRings = false,
+  focusRings = false,
   expanded = false,
+  className,
 }) => {
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
   const [totalItems, setTotalItems] = useState(() =>
@@ -54,6 +56,7 @@ const Accordion: React.FC<PropsWithChildren<AccordionProps>> = ({
       ))
     : childrenWithProps;
 
+  const classes = classNames("rounded-xl p-2", className);
   return (
     <AccordionContext.Provider
       value={{
@@ -62,10 +65,10 @@ const Accordion: React.FC<PropsWithChildren<AccordionProps>> = ({
         totalItems,
         allowMultiple,
         animate,
-        hideFocusRings,
+        focusRings,
       }}
     >
-      <div className="rounded-xl">{renderItems}</div>
+      <div className={classes}>{renderItems}</div>
     </AccordionContext.Provider>
   );
 };

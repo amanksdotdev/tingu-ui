@@ -165,14 +165,13 @@ export const WithAnimation: Story = {
   args: { items, animate: true },
 };
 
-export const FocusRingsHidden: Story = {
-  args: { items, hideFocusRings: true },
+export const WithFocusRings: Story = {
+  args: { items, focusRings: true },
 };
 
 export const withCustomClasses: Story = {
   args: {
     children: ["WithCustomStyling"],
-    hideFocusRings: true,
     animate: true,
     expanded: true,
   },
