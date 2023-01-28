@@ -18,8 +18,8 @@ const Button: React.FC<ButtonProps> = ({
     "text-sm font-medium transition-colors focus:ring focus:ring-4 focus:outline-none focus:ring-offset-0",
     getUIClasses(colorScheme, variant),
     getSizeClasses(size),
-    "border",
     {
+      border: variant === "outlined",
       "rounded-full": shape === "pill",
       "rounded-lg": shape === "rounded",
       className: className,

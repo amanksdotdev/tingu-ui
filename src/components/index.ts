@@ -6,3 +6,4 @@ export {
   AccordionContent,
 } from "./accordion";
 export { default as Container } from "./container";
+export * from "./modal";
