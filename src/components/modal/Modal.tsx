@@ -3,7 +3,7 @@ import React, { memo, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { RxCross2 } from "react-icons/rx";
 
-interface ModalProps {
+export interface ModalProps {
   isOpen: boolean;
   className?: string;
   id?: string;
@@ -21,7 +21,7 @@ interface ModalProps {
 }
 
 const portalId = "tingu-modal-portal";
-const Modal: React.FC<ModalProps> = ({
+export const Modal: React.FC<ModalProps> = ({
   id,
   isOpen,
   className,
