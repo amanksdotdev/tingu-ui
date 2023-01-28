@@ -5,11 +5,11 @@ A tiny react component library for your personal project.
 - Button
 - Accordion
 - Container (a div container with tailwind container class and horizontally centered)
+- Modal
 
 #### Todo / WIP 🚧:
 - Dropdown
 - Switch 
-- Modal (maybe built on top of React Modal library)
 - ThemeProvider (to take primary, secondary, success... etc. colors as context)
 - Radio Button
 - Checkbox
