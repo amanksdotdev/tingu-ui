@@ -7,9 +7,11 @@ import Modal from "./components/modal/Modal";
 import { ModalFooter } from "./components/modal/ModalFooter";
 import { ModalBody } from "./components/modal/ModalBody";
 import { ModalHeader } from "./components/modal/ModalHeader";
+import { Dropdown } from "./components/dropdown/Dropdown";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [dropdownItem, setDropdownItem] = useState<any>(null);
   return (
     <div>
       <Container>
@@ -37,6 +39,19 @@ const App = () => {
             },
           ]}
         />
+        <Dropdown
+          placeholder="Choose..."
+          value={dropdownItem}
+          onChange={(value) => setDropdownItem(value)}
+          options={[
+            { label: "Item 1", value: "item1" },
+            { label: "Item 2", value: "item2" },
+            { label: "Item 3", value: "item3" },
+            { label: "Item 4", value: "item4" },
+            { label: "Item 5", value: "item5" },
+          ]}
+        />
+
         <Accordion
           items={[
             {
@@ -122,7 +137,11 @@ const App = () => {
             <Button colorScheme="primary" size="small">
               Open
             </Button>
-            <Button size="small" colorScheme="light">
+            <Button
+              size="small"
+              colorScheme="light"
+              onClick={() => setIsOpen(false)}
+            >
               Close
             </Button>
           </ModalFooter>

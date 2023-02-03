@@ -6,9 +6,9 @@ A tiny react component library for your personal project.
 - Accordion
 - Container (a div container with tailwind container class and horizontally centered)
 - Modal
+- Dropdown
 
 #### Todo / WIP 🚧:
-- Dropdown
 - Switch 
 - ThemeProvider (to take primary, secondary, success... etc. colors as context)
 - Radio Button

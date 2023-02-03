@@ -1,6 +1,6 @@
 {
   "name": "@amanksdotcom/tingu-ui",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "A very simple and tiny react component library using tailwindcss",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
