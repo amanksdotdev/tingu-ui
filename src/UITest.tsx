@@ -39,18 +39,35 @@ const App = () => {
             },
           ]}
         />
-        <Dropdown
-          placeholder="Choose..."
-          value={dropdownItem}
-          onChange={(value) => setDropdownItem(value)}
-          options={[
-            { label: "Item 1", value: "item1" },
-            { label: "Item 2", value: "item2" },
-            { label: "Item 3", value: "item3" },
-            { label: "Item 4", value: "item4" },
-            { label: "Item 5", value: "item5" },
-          ]}
-        />
+        <div className="flex gap-4 mx-8">
+          <Dropdown
+            placeholder="Choose..."
+            value={dropdownItem}
+            onChange={(value) => setDropdownItem(value)}
+            options={[
+              { label: "Item 1", value: "item1" },
+              { label: "Item 2 is the biggest label", value: "item2" },
+              { label: "Item 3", value: "item3" },
+              { label: "Item 4", value: "item4" },
+              { label: "Item 5", value: "item5" },
+            ]}
+            width={150}
+            closeWhenClickedOutside={false}
+          />
+          <Dropdown
+            placeholder="Choose..."
+            value={dropdownItem}
+            onChange={(value) => setDropdownItem(value)}
+            options={[
+              { label: "Item 1", value: "item1" },
+              { label: "Item 2 is the biggest label", value: "item2" },
+              { label: "Item 3", value: "item3" },
+              { label: "Item 4", value: "item4" },
+              { label: "Item 5", value: "item5" },
+            ]}
+            width={150}
+          />
+        </div>
 
         <Accordion
           items={[
