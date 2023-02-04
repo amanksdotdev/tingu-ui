@@ -22,8 +22,8 @@ const Button: React.FC<ButtonProps> = ({
       border: variant === "outlined",
       "rounded-full": shape === "pill",
       "rounded-lg": shape === "rounded",
-      className: className,
-    }
+    },
+    className
   );
   return (
     <button type={type} className={finalClassNames} {...rest}>
